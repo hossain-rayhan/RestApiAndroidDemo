@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#9116d2</color>
+    <color name="colorPrimaryDark">#651391</color>
+    <color name="colorAccent">#651391</color>
+
+    <color name="themeColor">#9116d2</color>
+    <color name="themeColorPressed">#a440d9</color>
+
+    <color name="tab2">#aea8a8</color>
+    <color name="tab2Pressed">#878080</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="bg">#efefef</color>
 </resources>
