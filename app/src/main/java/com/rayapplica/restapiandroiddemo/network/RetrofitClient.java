@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private  static Retrofit retrofit;
-    private static final String BASE_URL = "https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&accepted=True&answers=3&site=stackoverflow";
+    private static final String BASE_URL = "https://api.stackexchange.com/2.2/search/";
 
     //making the constructor private to implement singleton design pattern
     private RetrofitClient(){}
