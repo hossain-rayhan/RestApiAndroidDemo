@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.QuickContactBadge;
 import android.widget.Toast;
 
+import com.rayapplica.restapiandroiddemo.Adapter.QuestionAdapter;
 import com.rayapplica.restapiandroiddemo.model.Data;
 import com.rayapplica.restapiandroiddemo.model.Question;
 import com.rayapplica.restapiandroiddemo.network.QuestionDataService;
@@ -20,6 +20,8 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private QuestionAdapter adapter;
+    private RecyclerView recyclerView;
     ProgressDialog progressDialog;
     QuestionDataService service;
 
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //create singleton instance of Retrofit Client and service
         service = RetrofitClient.getRetrofitInstance().create(QuestionDataService.class);
         //get user data and populate every time when the app launches
-        //getUserData();
+        getUserData();
     }
 
     //method for getting user data from the REST API
@@ -62,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
         for (Question question : data.getQuestionList()){
             Log.e("Question", question.getTitle());
         }
-        /*recyclerView = findViewById(R.id.customRecyclerView);
-        adapter = new UserRVAdapter(this, data.getUserList());
+        recyclerView = findViewById(R.id.customRecyclerView);
+        adapter = new QuestionAdapter(this, data.getQuestionList());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);*/
+        recyclerView.setAdapter(adapter);
     }
 }

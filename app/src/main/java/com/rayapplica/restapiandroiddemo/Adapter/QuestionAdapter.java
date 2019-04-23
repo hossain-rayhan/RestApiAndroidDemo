@@ -33,9 +33,9 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
     @Override
     public void onBindViewHolder(@NonNull QuestionViewHolder holder, int position) {
         holder.tvTitle.setText(questionList.get(position).getTitle());
-        holder.tvOwner.setText(questionList.get(position).getOwner().getName());
-        holder.tvViewCount.setText("" + questionList.get(position).getViewCount());
-        holder.tvAnswerCount.setText("" + questionList.get(position).getAnswerCount());
+        holder.tvOwner.setText("Owner: "+ questionList.get(position).getOwner().getName());
+        holder.tvViewCount.setText("Total View: " + questionList.get(position).getViewCount());
+        holder.tvAnswerCount.setText("Total Answers: " + questionList.get(position).getAnswerCount());
     }
 
     @Override

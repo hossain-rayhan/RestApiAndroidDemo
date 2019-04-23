@@ -17,8 +17,8 @@
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question Title"
-            android:textColor="@color/black"
+            android:text="@string/question_title"
+            android:textColor="@color/colorPrimary"
             android:textStyle="italic" />
 
         <TextView
@@ -26,27 +26,26 @@
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question Owner"
-            android:textColor="@color/black"
-            android:textStyle="italic" />
+            android:text="@string/question_owner"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvViewCount"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total View"
-            android:textColor="@color/black"
-            android:textStyle="italic" />
+            android:text="@string/total_view"
+            android:textStyle="italic"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvAnswerCount"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total Answers"
-            android:textColor="@color/black"
-            android:textStyle="italic" />
+            android:text="@string/total_answers"
+            android:textStyle="italic"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

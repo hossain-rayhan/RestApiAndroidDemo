@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">RestApiAndroidDemo</string>
+    <string name="app_name">Stack Overflow</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="question_title">The Stack Overflow Question Title with at least three answers, and has accepted answers</string>
+    <string name="question_owner">Question Owner</string>
+    <string name="total_view">Total View</string>
+    <string name="total_answers">Total Answers</string>
 </resources>
