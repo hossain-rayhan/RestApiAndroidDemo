@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 import com.rayapplica.restapiandroiddemo.Adapter.QuestionAdapter;
 import com.rayapplica.restapiandroiddemo.model.Data;
-import com.rayapplica.restapiandroiddemo.model.Question;
 import com.rayapplica.restapiandroiddemo.network.QuestionDataService;
 import com.rayapplica.restapiandroiddemo.network.RetrofitClient;
+import com.rayapplica.restapiandroiddemo.util.InternetChecker;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,8 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
         //create singleton instance of Retrofit Client and service
         service = RetrofitClient.getRetrofitInstance().create(QuestionDataService.class);
-        //get user data and populate every time when the app launches
-        getUserData();
+
+        if(InternetChecker.isInternetAvailable(getApplicationContext())){
+            //get user data and populate every time when the app launches
+            getUserData();
+        }else{
+            Toast.makeText(MainActivity.this, "No internet connection!", Toast.LENGTH_LONG).show();
+        }
     }
 
     //method for getting user data from the REST API
@@ -54,16 +59,17 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<Data> call, Throwable t) {
                 Log.e("On Failor Error", t.getMessage());
                 progressDialog.dismiss();
-                Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_LONG).show();
             }
         });
     }
 
     //extract and populate user data from http response
     private void generateDataList(Data data){
-        for (Question question : data.getQuestionList()){
+        //log for testing purpose
+        /*for (Question question : data.getQuestionList()){
             Log.e("Question", question.getTitle());
-        }
+        }*/
         recyclerView = findViewById(R.id.customRecyclerView);
         adapter = new QuestionAdapter(this, data.getQuestionList());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
